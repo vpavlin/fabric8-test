@@ -13,8 +13,8 @@ docker rm -f db
 # Run the DB docker image (detached) that the core requires
 docker run --name db -d -p $DB_PORT:5432 \
 	-e POSTGRESQL_ADMIN_PASSWORD=$DB_PASSWORD \
+	-e POSTGRESQL_USER=$DB_USER \
+	-e POSTGRESQL_PASSWORD=$DB_PASSWORD \
+	-e POSTGRESQL_DATABASE=$DB_NAME \
 	centos/postgresql-95-centos7
-#-e POSTGRESQL_USER=$DB_USER \
-#-e POSTGRESQL_PASSWORD=$DB_PASSWORD \
-#-e POSTGRESQL_DATABASE=$DB_NAME \
-#centos/postgresql-95-centos7
+
